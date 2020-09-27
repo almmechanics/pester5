@@ -1,9 +1,10 @@
 write-host ('Number of Environment Variables:{0}' -f (Get-ChildItem env:).count)
 write-host ('VerbosePreference set to: {0}' -f $VerbosePreference)
-write-host ('System Debug:{0}' -f $env:system.debug)
-import-module pester -Verbose
-write-host ('Pester Version: {0}' -f (Get-Module 'Pester').Version.ToString())
+write-host ('System Debug set to :{0}' -f $env:system_debug)
 
+Import-Module pester -Verbose
+
+write-host ('Pester Version: {0}' -f (Get-Module 'Pester').Version.ToString())
 
 # cast from empty hashtable to get default
 $configuration = [PesterConfiguration]@{}

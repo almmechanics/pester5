@@ -8,7 +8,7 @@ Describe "Get Environment Configuration" {
     }
 
     It "System Debug enabled" {
-        $env:system.debug | should -be $True
+        $env:system_debug | should -be $True
     }
 
     It "Verbose Preference is set to Continue" {
