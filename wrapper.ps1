@@ -8,7 +8,8 @@ $configuration = [PesterConfiguration]@{}
 $configuration.Run.Path = 'tests'
 $configuration.TestResult.OutputPath = 'TEST-Environment.nunit.xml'
 $configuration.TestResult.OutputFormat = 'NUnitXml'
-$configuration.TestResult.Enabled = $false
+$configuration.TestResult.Enabled = $False
 $configuration.Run.PassThru = $True
+$configuration.Run.Exit = $True
 
 Invoke-Pester -Configuration $configuration

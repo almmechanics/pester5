@@ -5,7 +5,7 @@ BeforeAll {
 Describe "Get Environment Configuration" {
     It "All Enviroment variables carried across" {
 
-        (Get-ChildItem env:).count | Should -Be 1
+        (Get-ChildItem env:).count | Should -Be 192
     }
 
     It "verbose Preference is set to Continue " {
