@@ -1,14 +1,17 @@
 BeforeAll {
-    (Get-ChildItem env:).Name | foreach-object {write-verbose $_}
+    (Get-ChildItem env:).Name | foreach-object {Write-Verbose $_}
 }
 
 Describe "Get Environment Configuration" {
-    It "All Enviroment variables carried across" {
-
-        (Get-ChildItem env:).count | Should -Be 192
+    It "All Environment variables carried across" {
+        (Get-ChildItem env:).count | Should -Be 193
     }
 
-    It "verbose Preference is set to Continue " {
+    It "System Debug enabled" {
+        $env:system.debug | should -be $True
+    }
+
+    It "Verbose Preference is set to Continue" {
         $VerbosePreference | Should -Be 'Continue'
     }
 }
